@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { CALENDLY_URL } from "@/lib/constants";
 import { Menu, X } from "lucide-react";
+import logoAsset from "@/assets/brandev-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
