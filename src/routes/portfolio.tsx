@@ -4,6 +4,10 @@ import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
 import { CtaBanner } from "@/components/CtaBanner";
 import { ArrowRight } from "lucide-react";
+import proAutoCover from "@/assets/pro-auto-cover.png.asset.json";
+import zamaanCover from "@/assets/zamaan-cover.png.asset.json";
+import pawpalCover from "@/assets/pawpal-cover.png.asset.json";
+import awdaCover from "@/assets/awda-cover.png.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
