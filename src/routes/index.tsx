@@ -119,12 +119,6 @@ function Home() {
           <Particles />
         </div>
         <div className="container-x relative z-[1] pt-20 pb-28 md:pt-32 md:pb-40 text-center">
-          <Reveal variant="fade-in">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6] shadow-[0_0_10px_#3b82f6]" />
-              Now booking Q3 2026 projects
-            </span>
-          </Reveal>
           <h1 className="mt-6 mx-auto max-w-4xl text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
             <Typewriter text="We Build AI-Powered Apps That Launch Your Vision Fast" />
           </h1>
