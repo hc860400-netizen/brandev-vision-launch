@@ -114,10 +114,21 @@ function Home() {
           </Reveal>
           <Reveal delay={500}>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
-              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="btn-primary btn-primary-hover">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-primary btn-primary-hover">
                 Book a Free Call <ArrowRight size={16} />
               </a>
               <Link to="/portfolio" className="btn-ghost btn-ghost-hover">See Our Work</Link>
+            </div>
+            <div className="mt-8 flex items-center justify-center" style={{ gap: 20 }}>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" aria-label="Book a Call" className="text-white/50 hover:text-white transition-colors duration-200">
+                <Calendar size={18} />
+              </a>
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white/50 hover:text-white transition-colors duration-200">
+                <Linkedin size={18} />
+              </a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white/50 hover:text-white transition-colors duration-200">
+                <Instagram size={18} />
+              </a>
             </div>
           </Reveal>
         </div>
