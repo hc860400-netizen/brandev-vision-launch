@@ -50,9 +50,27 @@ const why = [
 ];
 
 const projects = [
-  { name: "FoodieApp", tag: "Mobile App", desc: "Restaurant ordering app powered by AI recommendations.", gradient: "from-orange-500/30 to-red-500/20" },
-  { name: "MediBook", tag: "PWA", desc: "Doctor appointment booking with push notifications.", gradient: "from-cyan-500/30 to-blue-500/20" },
-  { name: "SalesBot AI", tag: "AI Project", desc: "AI sales chatbot integrated with Shopify stores.", gradient: "from-violet-500/30 to-blue-500/20" },
+  {
+    name: "Pro Automotive Reconditioning",
+    tag: "Mobile App",
+    desc: "Automotive reconditioning and transport management app for fleet teams.",
+    figma: "https://www.figma.com/design/GKzUnAoa1c2M5RoE9TZjp2/Pro-Automotive-Reconditioning-Transport-App--Copy-?node-id=0-1&t=KQss7Xox8z2yGbaj-1",
+    thumb: "https://www.figma.com/file/GKzUnAoa1c2M5RoE9TZjp2/thumbnail",
+  },
+  {
+    name: "HeartPad",
+    tag: "Mobile App",
+    desc: "Clean and minimal digital notepad app for capturing thoughts and ideas.",
+    figma: "https://www.figma.com/design/OAYQYTbfi8qvEOEPFoRtvE/HeartPad-V1?node-id=0-1&t=SPrCEittRbt8WqpQ-1",
+    thumb: "https://www.figma.com/file/OAYQYTbfi8qvEOEPFoRtvE/thumbnail",
+  },
+  {
+    name: "AI Pet Tracker",
+    tag: "AI · Mobile App",
+    desc: "AI-powered pet tracking and health monitoring app for pet owners.",
+    figma: "https://www.figma.com/design/f5F8xp1z7pA6OC18Wpfvpq/AI-Pet-Tracker?node-id=0-1&t=QgW4VK1C2ILVCYLv-1",
+    thumb: "https://www.figma.com/file/f5F8xp1z7pA6OC18Wpfvpq/thumbnail",
+  },
 ];
 
 const testimonials = [
