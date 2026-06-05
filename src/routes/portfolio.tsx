@@ -17,23 +17,85 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
 });
 
+const FIGMA_KEYS = {
+  proAuto: "GKzUnAoa1c2M5RoE9TZjp2",
+  heartPad: "OAYQYTbfi8qvEOEPFoRtvE",
+  petTracker: "f5F8xp1z7pA6OC18Wpfvpq",
+  awda: "467MFmraWnHT59jyiZj5TP",
+  mwStudio: "zDjFu6Rdlto2vfnpxE5rfH",
+};
+
 const projects = [
-  { name: "FoodieApp",   tag: "Mobile App",  cat: "mobile", desc: "Restaurant ordering app",         stack: "React Native, Node.js, AI recommendations", gradient: "from-orange-500/30 to-red-500/20" },
-  { name: "MediBook",    tag: "PWA",         cat: "pwa",    desc: "Doctor appointment booking",      stack: "Vue.js, Firebase, Push notifications",      gradient: "from-cyan-500/30 to-blue-500/20" },
-  { name: "SalesBot AI", tag: "AI Project",  cat: "ai",     desc: "AI sales chatbot for ecommerce",  stack: "Python, OpenAI, Shopify integration",       gradient: "from-violet-500/30 to-blue-500/20" },
-  { name: "LaunchPad",   tag: "MVP",         cat: "mvp",    desc: "Project management SaaS",         stack: "React, Node.js, PostgreSQL",                gradient: "from-emerald-500/30 to-cyan-500/20" },
-  { name: "StyleMe",     tag: "Mobile App",  cat: "mobile", desc: "Fashion and lifestyle app",       stack: "Flutter, Firebase, AI styling engine",      gradient: "from-pink-500/30 to-fuchsia-500/20" },
-  { name: "RetailDash",  tag: "Web App",     cat: "web",    desc: "B2B retail management dashboard", stack: "React, REST API, data visualization",       gradient: "from-blue-500/30 to-indigo-500/20" },
+  {
+    name: "Pro Automotive Reconditioning",
+    tag: "Mobile App",
+    cat: "mobile",
+    desc: "Automotive reconditioning and transport management app for fleet teams.",
+    figma: "https://www.figma.com/design/GKzUnAoa1c2M5RoE9TZjp2/Pro-Automotive-Reconditioning-Transport-App--Copy-?node-id=0-1&t=KQss7Xox8z2yGbaj-1",
+    thumb: `https://www.figma.com/file/${FIGMA_KEYS.proAuto}/thumbnail`,
+  },
+  {
+    name: "HeartPad",
+    tag: "Mobile App",
+    cat: "mobile",
+    desc: "Clean and minimal digital notepad app for capturing thoughts and ideas.",
+    figma: "https://www.figma.com/design/OAYQYTbfi8qvEOEPFoRtvE/HeartPad-V1?node-id=0-1&t=SPrCEittRbt8WqpQ-1",
+    thumb: `https://www.figma.com/file/${FIGMA_KEYS.heartPad}/thumbnail`,
+  },
+  {
+    name: "AI Pet Tracker",
+    tag: "AI · Mobile App",
+    cat: "ai",
+    desc: "AI-powered pet tracking and health monitoring app for pet owners.",
+    figma: "https://www.figma.com/design/f5F8xp1z7pA6OC18Wpfvpq/AI-Pet-Tracker?node-id=0-1&t=QgW4VK1C2ILVCYLv-1",
+    thumb: `https://www.figma.com/file/${FIGMA_KEYS.petTracker}/thumbnail`,
+  },
+  {
+    name: "Awda Smart Prayer Lock",
+    tag: "Mobile App",
+    cat: "mobile",
+    desc: "Smart prayer time lock app for focused and mindful daily worship.",
+    figma: "https://www.figma.com/design/467MFmraWnHT59jyiZj5TP/Awda-smart-prayer-lock-app?node-id=0-1&t=57dKzAsKe9Y3Bcec-1",
+    thumb: `https://www.figma.com/file/${FIGMA_KEYS.awda}/thumbnail`,
+  },
+  {
+    name: "MW Studio Dashboard",
+    tag: "Web App",
+    cat: "web",
+    desc: "Marketing operations dashboard for campaign tracking and workflow management.",
+    figma: "https://www.figma.com/design/zDjFu6Rdlto2vfnpxE5rfH/MW-Studio-%E2%80%94-Marketing-Operations-Dashboard?t=57dKzAsKe9Y3Bcec-1",
+    thumb: `https://www.figma.com/file/${FIGMA_KEYS.mwStudio}/thumbnail`,
+  },
 ];
 
 const filters = [
   { id: "all", label: "All" },
-  { id: "mobile", label: "Mobile Apps" },
-  { id: "web", label: "Web Apps" },
-  { id: "ai", label: "AI Projects" },
-  { id: "mvp", label: "MVP" },
-  { id: "pwa", label: "PWA" },
+  { id: "mobile", label: "Mobile App" },
+  { id: "web", label: "Web App" },
+  { id: "ai", label: "AI" },
 ];
+
+function ProjectCover({ name, thumb }: { name: string; thumb: string }) {
+  const [errored, setErrored] = useState(false);
+  if (errored) {
+    return (
+      <div className="aspect-[4/3] bg-[#0a0f1e] relative flex items-center justify-center">
+        <span className="text-2xl md:text-3xl font-bold text-[#3b82f6] text-center px-6">{name}</span>
+      </div>
+    );
+  }
+  return (
+    <div className="aspect-[4/3] bg-[#0a0f1e] relative overflow-hidden">
+      <img
+        src={thumb}
+        alt={`${name} cover`}
+        loading="lazy"
+        onError={() => setErrored(true)}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    </div>
+  );
+}
 
 function Portfolio() {
   const [filter, setFilter] = useState("all");
@@ -78,17 +140,19 @@ function Portfolio() {
                 className="card-surface card-hover-glow overflow-hidden h-full flex flex-col animate-fade-in"
                 style={{ transition: "opacity 200ms ease, transform 200ms ease" }}
               >
-                <div className={`aspect-[4/3] bg-gradient-to-br ${p.gradient} relative`}>
-                  <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-white/20">{p.name.charAt(0)}</div>
-                </div>
+                <ProjectCover name={p.name} thumb={p.thumb} />
                 <div className="p-6 flex-1 flex flex-col">
                   <span className="text-xs uppercase tracking-wider text-[#3b82f6] font-semibold">{p.tag}</span>
-                  <h3 className="mt-2 text-lg font-semibold">{p.name}</h3>
+                  <h3 className="mt-2 text-lg font-semibold text-white">{p.name}</h3>
                   <p className="mt-1 text-sm text-white/65">{p.desc}</p>
-                  <p className="mt-3 text-xs text-white/45">{p.stack}</p>
-                  <button className="mt-5 text-sm text-white/85 inline-flex items-center gap-1 self-start hover:text-[#3b82f6] transition-colors">
-                    View Case Study <ArrowRight size={14} />
-                  </button>
+                  <a
+                    href={p.figma}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 text-sm text-white/85 inline-flex items-center gap-1 self-start hover:text-[#3b82f6] transition-colors"
+                  >
+                    View Design <ArrowRight size={14} />
+                  </a>
                 </div>
               </article>
             </Reveal>
