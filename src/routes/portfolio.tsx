@@ -42,7 +42,7 @@ const projects = [
     name: "HeartPad",
     tag: "Mobile App",
     cat: "mobile",
-    desc: "Clean and minimal digital notepad app for capturing thoughts and ideas.",
+    desc: "Heart health monitoring and wellness tracking app for patients and caregivers.",
     figma: "https://www.figma.com/design/OAYQYTbfi8qvEOEPFoRtvE/HeartPad-V1?node-id=0-1&t=SPrCEittRbt8WqpQ-1",
     thumb: zamaanCover.url,
   },
