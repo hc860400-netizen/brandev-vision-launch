@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
-import { CALENDLY_URL, CONTACT_EMAIL, LINKEDIN_URL } from "@/lib/constants";
-import { Mail, Linkedin, Calendar, Check } from "lucide-react";
+import { CALENDLY_URL, CONTACT_EMAIL, LINKEDIN_URL, INSTAGRAM_URL } from "@/lib/constants";
+import { Mail, Linkedin, Instagram, Calendar, Check } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
