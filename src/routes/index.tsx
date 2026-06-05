@@ -65,9 +65,38 @@ function Home() {
     <PageShell>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10" style={{ background: "radial-gradient(900px circle at 50% 0%, rgba(59,130,246,0.18), transparent 60%)" }} />
-        <Particles />
-        <div className="container-x relative pt-20 pb-28 md:pt-32 md:pb-40 text-center">
+        {/* LAYER 1 — main glow */}
+        <div
+          className="absolute"
+          style={{
+            top: "-100px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "800px",
+            height: "600px",
+            background: "radial-gradient(ellipse at center top, rgba(59,130,246,0.45) 0%, transparent 65%)",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        {/* LAYER 2 — bright core */}
+        <div
+          className="absolute"
+          style={{
+            top: "-60px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "400px",
+            height: "300px",
+            background: "radial-gradient(ellipse at center top, rgba(59,130,246,0.3) 0%, transparent 60%)",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        <div className="absolute inset-0 z-[1] pointer-events-none">
+          <Particles />
+        </div>
+        <div className="container-x relative z-[1] pt-20 pb-28 md:pt-32 md:pb-40 text-center">
           <Reveal variant="fade-in">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
               <span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6] shadow-[0_0_10px_#3b82f6]" />
