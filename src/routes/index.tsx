@@ -293,7 +293,7 @@ function Home() {
                       const fb = img.nextElementSibling as HTMLElement | null;
                       if (fb) fb.style.display = "flex";
                     }}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-contain"
                   />
                   <div className="absolute inset-0 hidden items-center justify-center px-6 text-center text-2xl md:text-3xl font-bold text-[#3b82f6]">
                     {p.name}
