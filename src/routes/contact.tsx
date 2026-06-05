@@ -104,8 +104,11 @@ function Contact() {
               <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-3 text-white/80 hover:text-[#3b82f6] transition-colors">
                 <Mail size={16} className="text-[#3b82f6]" /> {CONTACT_EMAIL}
               </a>
-              <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-white/80 hover:text-[#3b82f6] transition-colors">
-                <Linkedin size={16} className="text-[#3b82f6]" /> linkedin.com/company/brandevsolutions
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/80 hover:text-[#3b82f6] transition-colors">
+                <Linkedin size={16} className="text-[#3b82f6]" /> linkedin.com/company/stars-solution
+              </a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/80 hover:text-[#3b82f6] transition-colors">
+                <Instagram size={16} className="text-[#3b82f6]" /> Instagram — @brandevsolutions
               </a>
             </div>
             <p className="mt-6 text-xs text-white/55">We reply within 24 hours.</p>
