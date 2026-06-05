@@ -19,20 +19,25 @@ export function CountUp({
     const el = ref.current;
     if (!el) return;
 
+    let raf = 0;
     const run = () => {
       if (started.current) return;
       started.current = true;
       const startTime = performance.now();
-      let raf = 0;
       const tick = (t: number) => {
         const p = Math.min(1, (t - startTime) / duration);
-        const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
-        setVal(Math.round(end * eased));
+        const eased = 1 - Math.pow(1 - p, 3);
+        const next = Math.round(end * eased);
+        setVal(p >= 1 ? end : next);
         if (p < 1) raf = requestAnimationFrame(tick);
       };
       raf = requestAnimationFrame(tick);
-      return () => cancelAnimationFrame(raf);
     };
+
+    if (typeof IntersectionObserver === "undefined") {
+      run();
+      return;
+    }
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -44,10 +49,27 @@ export function CountUp({
           }
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.3 }
     );
     io.observe(el);
-    return () => io.disconnect();
+
+    // Fallback: if already in viewport at mount but observer hasn't fired yet
+    const rect = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < vh && rect.bottom > 0) {
+      // Give observer a tick; if it doesn't fire, force run
+      const timer = setTimeout(() => run(), 200);
+      return () => {
+        clearTimeout(timer);
+        io.disconnect();
+        cancelAnimationFrame(raf);
+      };
+    }
+
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+    };
   }, [end, duration]);
 
   return (
