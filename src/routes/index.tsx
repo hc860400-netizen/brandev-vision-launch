@@ -5,10 +5,11 @@ import { Typewriter } from "@/components/Typewriter";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
 import { CtaBanner } from "@/components/CtaBanner";
-import { CALENDLY_URL } from "@/lib/constants";
+import { CALENDLY_URL, LINKEDIN_URL, INSTAGRAM_URL } from "@/lib/constants";
 import {
   Smartphone, Rocket, Bot, Globe, Code2, Palette,
-  Compass, PenTool, Hammer, Send, ArrowRight, Check
+  Compass, PenTool, Hammer, Send, ArrowRight, Check,
+  Calendar, Linkedin, Instagram
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
