@@ -36,7 +36,7 @@ const projects = [
     cat: "mobile",
     desc: "Automotive reconditioning and transport management app for fleet teams.",
     figma: "https://www.figma.com/design/GKzUnAoa1c2M5RoE9TZjp2/Pro-Automotive-Reconditioning-Transport-App--Copy-?node-id=0-1&t=KQss7Xox8z2yGbaj-1",
-    thumb: `https://www.figma.com/file/${FIGMA_KEYS.proAuto}/thumbnail`,
+    thumb: proAutoCover.url,
   },
   {
     name: "HeartPad",
@@ -44,7 +44,7 @@ const projects = [
     cat: "mobile",
     desc: "Clean and minimal digital notepad app for capturing thoughts and ideas.",
     figma: "https://www.figma.com/design/OAYQYTbfi8qvEOEPFoRtvE/HeartPad-V1?node-id=0-1&t=SPrCEittRbt8WqpQ-1",
-    thumb: `https://www.figma.com/file/${FIGMA_KEYS.heartPad}/thumbnail`,
+    thumb: zamaanCover.url,
   },
   {
     name: "AI Pet Tracker",
@@ -52,7 +52,7 @@ const projects = [
     cat: "ai",
     desc: "AI-powered pet tracking and health monitoring app for pet owners.",
     figma: "https://www.figma.com/design/f5F8xp1z7pA6OC18Wpfvpq/AI-Pet-Tracker?node-id=0-1&t=QgW4VK1C2ILVCYLv-1",
-    thumb: `https://www.figma.com/file/${FIGMA_KEYS.petTracker}/thumbnail`,
+    thumb: pawpalCover.url,
   },
   {
     name: "Awda Smart Prayer Lock",
@@ -60,7 +60,7 @@ const projects = [
     cat: "mobile",
     desc: "Smart prayer time lock app for focused and mindful daily worship.",
     figma: "https://www.figma.com/design/467MFmraWnHT59jyiZj5TP/Awda-smart-prayer-lock-app?node-id=0-1&t=57dKzAsKe9Y3Bcec-1",
-    thumb: `https://www.figma.com/file/${FIGMA_KEYS.awda}/thumbnail`,
+    thumb: awdaCover.url,
   },
   {
     name: "MW Studio Dashboard",
