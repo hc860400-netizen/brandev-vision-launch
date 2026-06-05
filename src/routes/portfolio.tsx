@@ -95,7 +95,7 @@ function ProjectCover({ name, thumb }: { name: string; thumb: string }) {
         alt={`${name} cover`}
         loading="lazy"
         onError={() => setErrored(true)}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain"
       />
     </div>
   );
