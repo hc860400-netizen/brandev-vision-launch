@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { CONTACT_EMAIL, LINKEDIN_URL } from "@/lib/constants";
+import { CALENDLY_URL, CONTACT_EMAIL, LINKEDIN_URL, INSTAGRAM_URL } from "@/lib/constants";
+import { Calendar, Linkedin, Instagram } from "lucide-react";
 import logoAsset from "@/assets/brandev-logo.png.asset.json";
 
 export function Footer() {
