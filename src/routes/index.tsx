@@ -278,17 +278,38 @@ function Home() {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {projects.map((p, i) => (
             <Reveal key={p.name} delay={i * 120}>
-              <Link to="/portfolio" className="block card-surface card-hover-glow overflow-hidden h-full">
-                <div className={`aspect-[4/3] bg-gradient-to-br ${p.gradient} relative`}>
-                  <div className="absolute inset-0 flex items-center justify-center text-5xl font-bold text-white/20">{p.name.charAt(0)}</div>
+              <div className="block card-surface card-hover-glow overflow-hidden h-full flex flex-col">
+                <div className="aspect-[4/3] bg-[#0a0f1e] relative overflow-hidden">
+                  <img
+                    src={p.thumb}
+                    alt={`${p.name} cover`}
+                    loading="lazy"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      img.style.display = "none";
+                      const fb = img.nextElementSibling as HTMLElement | null;
+                      if (fb) fb.style.display = "flex";
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 hidden items-center justify-center px-6 text-center text-2xl md:text-3xl font-bold text-[#3b82f6]">
+                    {p.name}
+                  </div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <span className="text-xs uppercase tracking-wider text-[#3b82f6] font-semibold">{p.tag}</span>
-                  <h3 className="mt-2 text-lg font-semibold">{p.name}</h3>
+                  <h3 className="mt-2 text-lg font-semibold text-white">{p.name}</h3>
                   <p className="mt-1 text-sm text-white/60">{p.desc}</p>
-                  <div className="mt-4 text-sm text-white/80 inline-flex items-center gap-1">View Case Study <ArrowRight size={14} /></div>
+                  <a
+                    href={p.figma}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 text-sm text-white/80 inline-flex items-center gap-1 self-start hover:text-[#3b82f6] transition-colors"
+                  >
+                    View Design <ArrowRight size={14} />
+                  </a>
                 </div>
-              </Link>
+              </div>
             </Reveal>
           ))}
         </div>
