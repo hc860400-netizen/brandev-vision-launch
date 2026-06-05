@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CONTACT_EMAIL, LINKEDIN_URL } from "@/lib/constants";
+import logoAsset from "@/assets/brandev-logo.png.asset.json";
 
 export function Footer() {
   return (
