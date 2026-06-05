@@ -20,9 +20,15 @@ export const Route = createFileRoute("/contact")({
 const SERVICES = ["Mobile App", "MVP", "AI Integration", "PWA", "Web Development", "UX Design", "Not Sure"];
 
 function Contact() {
+  const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (submitting || sent) return;
+    setSubmitting(true);
+    // Simulate submit (no backend connected)
+    await new Promise((r) => setTimeout(r, 900));
+    setSubmitting(false);
     setSent(true);
   };
 
@@ -40,40 +46,39 @@ function Contact() {
         <Reveal variant="slide-left">
           <form onSubmit={onSubmit} className="card-surface p-8 md:p-10">
             <h2 className="text-2xl font-semibold">Send us a message</h2>
-            {sent ? (
-              <div className="mt-8 text-center py-12">
-                <div className="mx-auto h-14 w-14 rounded-full bg-[#3b82f6]/15 border border-[#3b82f6]/40 text-[#3b82f6] flex items-center justify-center">
-                  <Check size={28} />
+            <div className="mt-6 space-y-5">
+              <Field label="Full Name" required>
+                <input required type="text" className={inputCls} disabled={submitting || sent} />
+              </Field>
+              <Field label="Email Address" required>
+                <input required type="email" className={inputCls} disabled={submitting || sent} />
+              </Field>
+              <Field label="Company / Startup Name">
+                <input type="text" className={inputCls} disabled={submitting || sent} />
+              </Field>
+              <Field label="Service Needed" required>
+                <select required className={inputCls} disabled={submitting || sent}>
+                  <option value="" className="bg-[#0a0f1e]">Select a service</option>
+                  {SERVICES.map((s) => <option key={s} className="bg-[#0a0f1e]">{s}</option>)}
+                </select>
+              </Field>
+              <Field label="Project description" required>
+                <textarea required rows={5} className={inputCls} placeholder="Tell us about your project..." disabled={submitting || sent} />
+              </Field>
+              <button
+                type="submit"
+                disabled={submitting || sent}
+                className="btn-primary btn-primary-hover w-full mt-2 hover:animate-glow-pulse disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {submitting ? "Sending..." : sent ? "Sent" : "Send Message"}
+              </button>
+              {sent && (
+                <div className="flex items-center justify-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300 animate-fade-in">
+                  <Check size={16} /> Thanks! We'll be in touch within 24 hours.
                 </div>
-                <p className="mt-4 text-lg font-medium">Message sent</p>
-                <p className="mt-1 text-sm text-white/60">We'll be in touch within 24 hours.</p>
-              </div>
-            ) : (
-              <div className="mt-6 space-y-5">
-                <Field label="Full Name" required>
-                  <input required type="text" className={inputCls} />
-                </Field>
-                <Field label="Email Address" required>
-                  <input required type="email" className={inputCls} />
-                </Field>
-                <Field label="Company / Startup Name">
-                  <input type="text" className={inputCls} />
-                </Field>
-                <Field label="Service Needed" required>
-                  <select required className={inputCls}>
-                    <option value="" className="bg-[#0a0f1e]">Select a service</option>
-                    {SERVICES.map((s) => <option key={s} className="bg-[#0a0f1e]">{s}</option>)}
-                  </select>
-                </Field>
-                <Field label="Project description" required>
-                  <textarea required rows={5} className={inputCls} placeholder="Tell us about your project..." />
-                </Field>
-                <button type="submit" className="btn-primary btn-primary-hover w-full mt-2 hover:animate-glow-pulse">
-                  Send Message
-                </button>
-                <p className="text-xs text-white/50 text-center">No commitment required. Just a conversation about your idea.</p>
-              </div>
-            )}
+              )}
+              <p className="text-xs text-white/50 text-center">No commitment required. Just a conversation about your idea.</p>
+            </div>
           </form>
         </Reveal>
 
