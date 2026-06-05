@@ -30,8 +30,7 @@ export function Nav() {
     >
       <div className="container-x flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2 group">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#3b82f6] text-white font-bold shadow-[0_0_24px_-4px_rgba(59,130,246,0.7)]">B</span>
-          <span className="font-semibold tracking-tight">Brandev<span className="text-[#3b82f6]">.</span></span>
+          <span className="font-semibold tracking-tight text-lg">Brandev<span className="text-[#3b82f6]">.</span></span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

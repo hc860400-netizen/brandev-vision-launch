@@ -7,8 +7,7 @@ export function Footer() {
       <div className="container-x py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#3b82f6] text-white font-bold">B</span>
-            <span className="font-semibold">Brandev<span className="text-[#3b82f6]">.</span></span>
+            <span className="font-semibold text-lg">Brandev<span className="text-[#3b82f6]">.</span></span>
           </div>
           <p className="mt-4 text-sm text-white/60 max-w-xs">Building the future, one app at a time.</p>
         </div>
@@ -45,9 +44,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="container-x py-6 text-xs text-white/45 flex flex-col md:flex-row justify-between gap-2">
+        <div className="container-x py-6 text-xs text-white/45">
           <span>© 2025 Brandev Solutions. All rights reserved.</span>
-          <span>Pricing is tailored to your project. Book a free call to get a custom quote.</span>
         </div>
       </div>
     </footer>

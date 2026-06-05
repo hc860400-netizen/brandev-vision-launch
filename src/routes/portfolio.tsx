@@ -73,7 +73,11 @@ function Portfolio() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {visible.map((p, i) => (
             <Reveal key={p.name} delay={i * 80}>
-              <article className="card-surface card-hover-glow overflow-hidden h-full flex flex-col">
+              <article
+                data-category={p.cat}
+                className="card-surface card-hover-glow overflow-hidden h-full flex flex-col animate-fade-in"
+                style={{ transition: "opacity 200ms ease, transform 200ms ease" }}
+              >
                 <div className={`aspect-[4/3] bg-gradient-to-br ${p.gradient} relative`}>
                   <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-white/20">{p.name.charAt(0)}</div>
                 </div>
