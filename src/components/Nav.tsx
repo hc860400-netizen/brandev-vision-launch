@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { CALENDLY_URL } from "@/lib/constants";
 import { Menu, X } from "lucide-react";
+import logoAsset from "@/assets/brandev-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
@@ -30,6 +31,7 @@ export function Nav() {
     >
       <div className="container-x flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2 group">
+          <img src={logoAsset.url} alt="Brandev Solutions" className="h-8 w-8 rounded-lg" />
           <span className="font-semibold tracking-tight text-lg">Brandev<span className="text-[#3b82f6]">.</span></span>
         </Link>
 

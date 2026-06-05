@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CONTACT_EMAIL, LINKEDIN_URL } from "@/lib/constants";
+import logoAsset from "@/assets/brandev-logo.png.asset.json";
 
 export function Footer() {
   return (
@@ -7,6 +8,7 @@ export function Footer() {
       <div className="container-x py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2">
+            <img src={logoAsset.url} alt="Brandev Solutions" className="h-8 w-8 rounded-lg" />
             <span className="font-semibold text-lg">Brandev<span className="text-[#3b82f6]">.</span></span>
           </div>
           <p className="mt-4 text-sm text-white/60 max-w-xs">Building the future, one app at a time.</p>
