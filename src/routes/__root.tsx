@@ -86,8 +86,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Brandev Solutions — AI-Powered Apps, Built Fast" },
       { name: "twitter:description", content: "Brandev Solutions builds mobile apps, PWAs, and AI integrations for startups and small businesses — from idea to launch in weeks." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b3c390c5-5af4-45f6-a08c-7f163932f1c7/id-preview-70e8c960--eb01f561-8fe9-4591-8859-2b1098338a97.lovable.app-1780653009580.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b3c390c5-5af4-45f6-a08c-7f163932f1c7/id-preview-70e8c960--eb01f561-8fe9-4591-8859-2b1098338a97.lovable.app-1780653009580.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/2a60gYo3xBU6CY3UPqvoLdH0P282/social-images/social-1780740817621-IMG_0651.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/2a60gYo3xBU6CY3UPqvoLdH0P282/social-images/social-1780740817621-IMG_0651.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
