@@ -3,7 +3,7 @@ import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
 import { CtaBanner } from "@/components/CtaBanner";
 import { CALENDLY_URL } from "@/lib/constants";
-import { Smartphone, Rocket, Bot, Globe, Code2, Palette, Check, ArrowRight, Clock } from "lucide-react";
+import { Smartphone, Rocket, Bot, Globe, Code2, Palette, Check, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
