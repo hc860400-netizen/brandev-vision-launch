@@ -3,7 +3,7 @@ import { PageShell } from "@/components/PageShell";
 import { Reveal } from "@/components/Reveal";
 import { CtaBanner } from "@/components/CtaBanner";
 import { CALENDLY_URL } from "@/lib/constants";
-import { Smartphone, Rocket, Bot, Globe, Code2, Palette, Check, ArrowRight, Clock } from "lucide-react";
+import { Smartphone, Rocket, Bot, Globe, Code2, Palette, Check, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -109,41 +109,39 @@ function Services() {
         </Reveal>
       </section>
 
-      <div className="container-x py-12 space-y-10">
+      <div className="container-x py-12 grid gap-8 md:grid-cols-2">
         {services.map((s, i) => (
           <Reveal key={s.name} delay={i * 50}>
-            <section className="card-surface p-8 md:p-12">
-              <div className="grid md:grid-cols-3 gap-10">
-                <div>
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3b82f6]/15 text-[#3b82f6] border border-[#3b82f6]/30">
-                    <s.icon size={24} />
-                  </div>
-                  <h2 className="mt-5 text-2xl md:text-3xl font-bold tracking-tight">{s.name}</h2>
-                  <p className="mt-3 text-sm text-white/65"><span className="text-white/85 font-medium">For:</span> {s.who}</p>
-                  <div className="mt-5 inline-flex items-center gap-2 text-sm text-white/75">
-                    <Clock size={14} className="text-[#3b82f6]" />
-                    <span>{s.timeline}</span>
-                  </div>
+            <section className="card-surface p-8 md:p-10 h-full relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:border-[#3b82f6]/40 hover:shadow-[0_20px_60px_-20px_rgba(59,130,246,0.35)]">
+              <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%)" }} />
+              <div className="flex items-start justify-between gap-4 relative">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3b82f6]/15 text-[#3b82f6] border border-[#3b82f6]/30">
+                  <s.icon size={24} />
                 </div>
-                <div className="md:col-span-2">
-                  <h3 className="text-sm uppercase tracking-widest text-white/55 font-semibold">What's included</h3>
-                  <ul className="mt-4 space-y-3">
-                    {s.bullets.map((b) => (
-                      <li key={b} className="flex gap-3 text-white/80">
-                        <Check size={18} className="text-[#3b82f6] flex-shrink-0 mt-0.5" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="btn-primary btn-primary-hover mt-8">
-                    Get a Custom Quote <ArrowRight size={16} />
-                  </a>
-                </div>
+                <span className="text-xs font-mono text-white/40">0{i + 1}</span>
+              </div>
+              <h2 className="mt-5 text-2xl font-bold tracking-tight">{s.name}</h2>
+              <p className="mt-3 text-sm text-white/65">{s.who}</p>
+              <div className="mt-4 inline-flex items-center gap-2 text-xs text-white/70 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+                <Clock size={12} className="text-[#3b82f6]" />
+                <span>{s.timeline}</span>
+              </div>
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <h3 className="text-xs uppercase tracking-widest text-white/55 font-semibold">What's included</h3>
+                <ul className="mt-4 space-y-2.5">
+                  {s.bullets.map((b) => (
+                    <li key={b} className="flex gap-3 text-sm text-white/80">
+                      <Check size={16} className="text-[#3b82f6] flex-shrink-0 mt-0.5" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </section>
           </Reveal>
         ))}
       </div>
+
 
       <CtaBanner
         headline="Every project is different. Let's talk about yours."
