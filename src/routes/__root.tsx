@@ -78,6 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0a0f1e" },
+      { name: "google-site-verification", content: "rXqwnYZdvN5dTKTpQ0FCnKatH-8zn17XKLyYJi8DUKA" },
       { title: "Brandev Solutions — AI-Powered Apps, Built Fast" },
       { name: "description", content: "Brandev Solutions builds mobile apps, PWAs, and AI integrations for startups and small businesses — from idea to launch in weeks." },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
