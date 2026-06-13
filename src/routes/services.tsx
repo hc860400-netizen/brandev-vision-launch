@@ -8,11 +8,29 @@ import { Smartphone, Rocket, Bot, Globe, Code2, Palette, Check, Clock } from "lu
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Brandev Solutions" },
-      { name: "description", content: "Mobile app, MVP, AI, PWA, web development, and UX design — everything you need to launch." },
+      { title: "Services — Mobile, MVP, AI & Web Development | Brandev Solutions" },
+      { name: "description", content: "Mobile app, MVP, AI integration, PWA, web development, and UX design services. Launch your product in 3–8 weeks with Brandev Solutions." },
       { property: "og:title", content: "Services — Brandev Solutions" },
       { property: "og:description", content: "End-to-end product development for startups and small businesses." },
+      { property: "og:url", content: "https://brandevsolutions.com/services" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://brandevsolutions.com/services" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Brandev Solutions Services",
+        itemListElement: [
+          "Mobile App Development", "MVP Development", "AI Integration & Chatbots",
+          "PWA Development", "Web Development", "UX & Product Design"
+        ].map((name, i) => ({
+          "@type": "ListItem", position: i + 1,
+          item: { "@type": "Service", name, provider: { "@type": "Organization", name: "Brandev Solutions" } }
+        })),
+      }),
+    }],
   }),
   component: Services,
 });

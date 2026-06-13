@@ -29,12 +29,12 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold mb-4">Services</h4>
           <ul className="space-y-2 text-sm text-white/65">
-            <li>Mobile Apps</li>
-            <li>MVP Development</li>
-            <li>AI Integration</li>
-            <li>PWA</li>
-            <li>Web Development</li>
-            <li>UX Design</li>
+            <li><Link to="/services" className="hover:text-white">Mobile Apps</Link></li>
+            <li><Link to="/services" className="hover:text-white">MVP Development</Link></li>
+            <li><Link to="/services" className="hover:text-white">AI Integration</Link></li>
+            <li><Link to="/services" className="hover:text-white">PWA</Link></li>
+            <li><Link to="/services" className="hover:text-white">Web Development</Link></li>
+            <li><Link to="/services" className="hover:text-white">UX Design</Link></li>
           </ul>
         </div>
 

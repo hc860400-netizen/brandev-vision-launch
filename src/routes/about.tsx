@@ -7,11 +7,23 @@ import { CtaBanner } from "@/components/CtaBanner";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Brandev Solutions" },
-      { name: "description", content: "Brandev Solutions is a team of builders, designers, and AI specialists turning ideas into products." },
+      { title: "About Brandev Solutions — Our Story, Mission & Team" },
+      { name: "description", content: "Meet the builders, designers, and AI specialists at Brandev Solutions turning startup ideas into launched products across 5+ countries." },
       { property: "og:title", content: "About — Brandev Solutions" },
       { property: "og:description", content: "Meet the team behind Brandev Solutions." },
+      { property: "og:url", content: "https://brandevsolutions.com/about" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://brandevsolutions.com/about" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        url: "https://brandevsolutions.com/about",
+        mainEntity: { "@type": "Organization", name: "Brandev Solutions", url: "https://brandevsolutions.com" },
+      }),
+    }],
   }),
   component: About,
 });
