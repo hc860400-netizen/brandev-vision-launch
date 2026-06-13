@@ -8,11 +8,27 @@ import { Mail, Linkedin, Instagram, Calendar, Check } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Brandev Solutions" },
-      { name: "description", content: "Tell us about your project. We respond within 24 hours." },
+      { title: "Contact Brandev Solutions — Get a Free Project Consultation" },
+      { name: "description", content: "Tell us about your project or book a free 30-minute call. Brandev Solutions responds within 24 hours." },
       { property: "og:title", content: "Contact — Brandev Solutions" },
       { property: "og:description", content: "Get in touch with Brandev Solutions." },
+      { property: "og:url", content: "https://brandevsolutions.com/contact" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://brandevsolutions.com/contact" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        url: "https://brandevsolutions.com/contact",
+        mainEntity: {
+          "@type": "Organization", name: "Brandev Solutions",
+          email: "brandevsol@gmail.com",
+          contactPoint: { "@type": "ContactPoint", contactType: "customer support", email: "brandevsol@gmail.com", availableLanguage: "English" },
+        },
+      }),
+    }],
   }),
   component: Contact,
 });

@@ -19,11 +19,32 @@ import pawpalCover from "@/assets/pawpal-cover.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Brandev Solutions — AI-Powered Apps, Built Fast" },
-      { name: "description", content: "Brandev Solutions builds mobile apps, PWAs, and AI integrations for startups and small businesses — from idea to launch in weeks." },
+      { title: "Brandev Solutions — AI-Powered Mobile Apps, PWAs & AI Integrations" },
+      { name: "description", content: "Brandev Solutions builds mobile apps, PWAs, and AI integrations for startups and small businesses — from idea to launch in 3–6 weeks." },
+      { name: "keywords", content: "mobile app development, MVP development, AI integration, chatbot development, PWA, web development, UX design, startup agency" },
       { property: "og:title", content: "Brandev Solutions — AI-Powered Apps, Built Fast" },
       { property: "og:description", content: "Mobile, web, and AI development for startups ready to launch fast." },
+      { property: "og:url", content: "https://brandevsolutions.com/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Brandev Solutions — AI-Powered Apps, Built Fast" },
+      { name: "twitter:description", content: "Mobile, web, and AI development for startups ready to launch fast." },
     ],
+    links: [{ rel: "canonical", href: "https://brandevsolutions.com/" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        name: "Brandev Solutions",
+        url: "https://brandevsolutions.com",
+        image: "https://brandevsolutions.com/__l5e/assets-v1/9931dfbe-fa55-4991-a281-b2a068368469/brandev-logo.png",
+        description: "AI-powered mobile app, PWA, and web development for startups and small businesses.",
+        email: "brandevsol@gmail.com",
+        priceRange: "$$",
+        areaServed: "Worldwide",
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "30" },
+      }),
+    }],
   }),
   component: Home,
 });

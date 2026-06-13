@@ -12,11 +12,23 @@ import awdaCover from "@/assets/awda-cover.png.asset.json";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Brandev Solutions" },
-      { name: "description", content: "Real projects built for real clients — from MVPs to full-scale products." },
+      { title: "Portfolio — Mobile Apps, PWAs & AI Projects | Brandev Solutions" },
+      { name: "description", content: "Explore mobile apps, PWAs, AI products, and SaaS dashboards Brandev Solutions has shipped for real clients worldwide." },
       { property: "og:title", content: "Portfolio — Brandev Solutions" },
       { property: "og:description", content: "Mobile apps, PWAs, AI projects, and SaaS products we've built." },
+      { property: "og:url", content: "https://brandevsolutions.com/portfolio" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://brandevsolutions.com/portfolio" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Brandev Solutions Portfolio",
+        url: "https://brandevsolutions.com/portfolio",
+      }),
+    }],
   }),
   component: Portfolio,
 });
